@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ThankYouBanner extends StatelessWidget {
   const ThankYouBanner({
@@ -17,7 +16,8 @@ class ThankYouBanner extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 11),
       child: Text(
         'Thank You $passengerName, Happy Journey !',
-        style: GoogleFonts.myanmarKhyay(
+        style: TextStyle(
+          fontFamily: 'MyanmarKhyay',
           color: Colors.grey.shade500,
           fontSize: 12,
           fontWeight: FontWeight.w400,

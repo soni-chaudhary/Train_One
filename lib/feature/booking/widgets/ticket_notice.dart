@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../theme/app_colors.dart';
 
@@ -15,9 +14,10 @@ class TicketNotice extends StatelessWidget {
         color: const Color(0xFFFFF8F8),
         borderRadius: BorderRadius.circular(4),
       ),
-      child: RichText(
-        text: TextSpan(
-          style: GoogleFonts.myanmarKhyay(
+      child: const Text.rich(
+        TextSpan(
+          style: TextStyle(
+            fontFamily: 'MyanmarKhyay',
             color: AppColors.warningText,
             fontSize: 11,
             height: 1.35,

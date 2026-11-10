@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class RailOneBottomNavigation extends StatelessWidget {
   const RailOneBottomNavigation({
@@ -37,7 +36,9 @@ class RailOneBottomNavigation extends StatelessWidget {
               onTap: () => onTap(0),
             ),
             _BottomNavItem(
-              icon: currentIndex == 1 ? Icons.confirmation_num : Icons.confirmation_number_outlined,
+              icon: currentIndex == 1
+                  ? Icons.confirmation_num
+                  : Icons.confirmation_number_outlined,
               label: 'My Bookings',
               selected: currentIndex == 1,
               onTap: () => onTap(1),
@@ -91,9 +92,11 @@ class _BottomNavItem extends StatelessWidget {
               label,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.myanmarKhyay(
+              style: TextStyle(
+                fontFamily: 'MyanmarKhyay',
                 color: color,
                 fontSize: 12,
+
                 fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
               ),
             ),

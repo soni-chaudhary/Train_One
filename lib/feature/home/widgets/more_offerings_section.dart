@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../theme/app_theme.dart';
 import 'offering_tile.dart';
 
@@ -80,7 +79,8 @@ class MoreOfferingsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 17),
           child: Text(
             'More Offerings',
-            style: GoogleFonts.myanmarKhyay(
+            style: TextStyle(
+              fontFamily: 'MyanmarKhyay',
               fontSize: 27,
               color: AppTheme.navy,
               fontWeight: FontWeight.w700,
@@ -100,7 +100,8 @@ class MoreOfferingsSection extends StatelessWidget {
               mainAxisSpacing: 20,
               childAspectRatio: 0.72,
             ),
-            itemBuilder: (context, index) => OfferingTile(data: offerings[index]),
+            itemBuilder: (context, index) =>
+                OfferingTile(data: offerings[index]),
           ),
         ),
       ],

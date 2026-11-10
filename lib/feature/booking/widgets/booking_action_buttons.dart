@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../theme/app_colors.dart';
 
@@ -35,9 +34,10 @@ class BookingActionButtons extends StatelessWidget {
                 ),
                 backgroundColor: Colors.white,
               ),
-              child: Text(
+              child: const Text(
                 'Book Connecting Journey',
-                style: GoogleFonts.myanmarKhyay(
+                style: TextStyle(
+                  fontFamily: 'MyanmarKhyay',
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
@@ -57,9 +57,10 @@ class BookingActionButtons extends StatelessWidget {
                   borderRadius: BorderRadius.circular(28),
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'Book Again',
-                style: GoogleFonts.myanmarKhyay(
+                style: TextStyle(
+                  fontFamily: 'MyanmarKhyay',
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
                 ),

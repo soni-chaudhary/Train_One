@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../theme/app_colors.dart';
 
@@ -80,7 +79,8 @@ class TicketSummaryCard extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               '↪ Via: $route',
-              style: GoogleFonts.myanmarKhyay(
+              style: const TextStyle(
+                fontFamily: 'MyanmarKhyay',
                 color: AppColors.textSecondary,
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
@@ -94,20 +94,22 @@ class TicketSummaryCard extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               'IR:$irReference',
-              style: GoogleFonts.myanmarKhyay(
-                color: const Color(0xFF999999),
+              style: const TextStyle(
+                fontFamily: 'MyanmarKhyay',
+                color: Color(0xFF999999),
                 fontSize: 12,
                 letterSpacing: 0.4,
               ),
             ),
           ),
           const SizedBox(height: 19),
-          Align(
+          const Align(
             alignment: Alignment.centerLeft,
             child: Text(
               'Valid for start of journey within 3 hour or until departure of the first train.',
-              style: GoogleFonts.myanmarKhyay(
-                color: const Color(0xFF9A9A9A),
+              style: TextStyle(
+                fontFamily: 'MyanmarKhyay',
+                color: Color(0xFF9A9A9A),
                 fontSize: 10,
                 height: 1.35,
               ),
@@ -132,17 +134,19 @@ class _TopRow extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Journey Ticket',
-              style: GoogleFonts.myanmarKhyay(
-                color: const Color(0xFF8D8D8D),
+              style: TextStyle(
+                fontFamily: 'MyanmarKhyay',
+                color: Color(0xFF8D8D8D),
                 fontSize: 11,
               ),
             ),
             const SizedBox(height: 2),
             Text(
               ticketNumber,
-              style: GoogleFonts.myanmarKhyay(
+              style: const TextStyle(
+                fontFamily: 'MyanmarKhyay',
                 color: AppColors.textPrimary,
                 fontSize: 13,
                 fontWeight: FontWeight.w700,
@@ -158,14 +162,15 @@ class _TopRow extends StatelessWidget {
             color: const Color(0xFFEAF7ED),
             borderRadius: BorderRadius.circular(20),
           ),
-          child: Row(
+          child: const Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.circle, size: 8, color: AppColors.success),
-              const SizedBox(width: 5),
+              Icon(Icons.circle, size: 8, color: AppColors.success),
+              SizedBox(width: 5),
               Text(
                 'ACTIVE',
-                style: GoogleFonts.myanmarKhyay(
+                style: TextStyle(
+                  fontFamily: 'MyanmarKhyay',
                   color: AppColors.success,
                   fontSize: 11,
                   fontWeight: FontWeight.w700,
@@ -235,8 +240,9 @@ class _InfoColumn extends StatelessWidget {
       children: [
         Text(
           label,
-          style: GoogleFonts.myanmarKhyay(
-            color: const Color(0xFF8B8B8B),
+          style: const TextStyle(
+            fontFamily: 'MyanmarKhyay',
+            color: Color(0xFF8B8B8B),
             fontSize: 11,
             fontWeight: FontWeight.w400,
           ),
@@ -245,7 +251,8 @@ class _InfoColumn extends StatelessWidget {
         const SizedBox(height: 3),
         Text(
           value,
-          style: GoogleFonts.myanmarKhyay(
+          style: TextStyle(
+            fontFamily: 'MyanmarKhyay',
             color: AppColors.textPrimary,
             fontSize: 13,
             fontWeight: label == 'Fare' ? FontWeight.w700 : FontWeight.w600,

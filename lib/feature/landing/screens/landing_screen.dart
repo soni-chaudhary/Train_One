@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../booking/screens/booking_details_screen.dart';
 import '../../home/screens/rail_one_home_screen.dart';
 import '../widgets/railone_bottom_navigation.dart';
@@ -37,12 +36,8 @@ class _LandingScreenState extends State<LandingScreen> {
       body: IndexedStack(
         index: _currentIndex,
         children: [
-          RailOneHomeScreen(
-            onNavigateToBookings: () => _onTabSelected(1),
-          ),
-          BookingDetailsScreen(
-            onBack: () => _onTabSelected(0),
-          ),
+          RailOneHomeScreen(onNavigateToBookings: () => _onTabSelected(1)),
+          BookingDetailsScreen(onBack: () => _onTabSelected(0)),
           const _ProfilePlaceholderTab(),
           const _MenuPlaceholderTab(),
         ],
@@ -62,10 +57,7 @@ class _ProfilePlaceholderTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text('You (Profile)'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('You (Profile)'), centerTitle: true),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -79,7 +71,11 @@ class _ProfilePlaceholderTab extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: Color(0xFFE8F0FE),
                 ),
-                child: const Icon(Icons.person, size: 50, color: Color(0xFF0866F5)),
+                child: const Icon(
+                  Icons.person,
+                  size: 50,
+                  color: Color(0xFF0866F5),
+                ),
               ),
               const SizedBox(height: 16),
               const Text(
@@ -93,7 +89,8 @@ class _ProfilePlaceholderTab extends StatelessWidget {
               const SizedBox(height: 6),
               Text(
                 '+91 9557953242',
-                style: GoogleFonts.myanmarKhyay(
+                style: TextStyle(
+                  fontFamily: 'MyanmarKhyay',
                   fontSize: 15,
                   color: AppTheme.mutedText,
                 ),
@@ -102,15 +99,21 @@ class _ProfilePlaceholderTab extends StatelessWidget {
               Card(
                 elevation: 0,
                 color: const Color(0xFFF7F9FC),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 16,
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'R-Wallet Balance',
-                        style: GoogleFonts.myanmarKhyay(
+                        style: TextStyle(
+                          fontFamily: 'MyanmarKhyay',
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                         ),
@@ -142,10 +145,7 @@ class _MenuPlaceholderTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text('Menu & Services'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Menu & Services'), centerTitle: true),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 12),
         children: [
@@ -173,12 +173,17 @@ class _MenuPlaceholderTab extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: GoogleFonts.myanmarKhyay(
-            fontWeight: FontWeight.w500,
-            fontSize: 15,
-          ),
+        style: TextStyle(
+          fontFamily: 'MyanmarKhyay',
+          fontWeight: FontWeight.w500,
+          fontSize: 15,
+        ),
       ),
-      trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 16, color: Colors.grey),
+      trailing: const Icon(
+        Icons.arrow_forward_ios_rounded,
+        size: 16,
+        color: Colors.grey,
+      ),
       onTap: () {},
     );
   }

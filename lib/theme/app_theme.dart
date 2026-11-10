@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
@@ -19,41 +18,48 @@ abstract final class AppTheme {
 
     return base.copyWith(
       scaffoldBackgroundColor: AppColors.background,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
         elevation: 0,
         centerTitle: false,
         titleSpacing: 0,
-        titleTextStyle: GoogleFonts.myanmarKhyay(
+        titleTextStyle: TextStyle(
+          fontFamily: 'MyanmarKhyay',
           fontSize: 20,
           fontWeight: FontWeight.w700,
           color: Colors.white,
         ),
       ),
-      textTheme: GoogleFonts.myanmarKhyayTextTheme(base.textTheme).copyWith(
-        titleLarge: GoogleFonts.myanmarKhyay(
+      textTheme: const TextTheme(
+        titleLarge: TextStyle(
+          fontFamily: 'MyanmarKhyay',
           fontSize: 20,
           fontWeight: FontWeight.w700,
           color: Colors.white,
         ),
-        titleMedium: GoogleFonts.myanmarKhyay(
+        titleMedium: TextStyle(
+          fontFamily: 'MyanmarKhyay',
           fontSize: 16,
           fontWeight: FontWeight.w600,
         ),
-        titleSmall: GoogleFonts.myanmarKhyay(
+        titleSmall: TextStyle(
+          fontFamily: 'MyanmarKhyay',
           fontSize: 14,
           fontWeight: FontWeight.w600,
         ),
-        bodyLarge: GoogleFonts.myanmarKhyay(
+        bodyLarge: TextStyle(
+          fontFamily: 'MyanmarKhyay',
           fontSize: 15,
           color: AppColors.textPrimary,
         ),
-        bodyMedium: GoogleFonts.myanmarKhyay(
+        bodyMedium: TextStyle(
+          fontFamily: 'MyanmarKhyay',
           fontSize: 13,
           color: AppColors.textSecondary,
         ),
-        labelLarge: GoogleFonts.myanmarKhyay(
+        labelLarge: TextStyle(
+          fontFamily: 'MyanmarKhyay',
           fontSize: 14,
           fontWeight: FontWeight.w600,
         ),

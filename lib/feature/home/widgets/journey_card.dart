@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../theme/app_theme.dart';
 
 class JourneyCard extends StatelessWidget {
@@ -31,7 +30,11 @@ class JourneyCard extends StatelessWidget {
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) => Container(
                     color: Colors.grey.shade200,
-                    child: const Icon(Icons.train, size: 48, color: Colors.grey),
+                    child: const Icon(
+                      Icons.train,
+                      size: 48,
+                      color: Colors.grey,
+                    ),
                   ),
                 ),
               ),
@@ -42,7 +45,8 @@ class JourneyCard extends StatelessWidget {
             title,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.myanmarKhyay(
+            style: TextStyle(
+              fontFamily: 'MyanmarKhyay',
               fontSize: 23,
               color: AppTheme.mutedText,
               height: 1.05,

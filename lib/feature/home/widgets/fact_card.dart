@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../theme/app_theme.dart';
 
 class FactCard extends StatelessWidget {
@@ -34,7 +33,11 @@ class FactCard extends StatelessWidget {
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: Colors.grey.shade200,
-                      child: const Icon(Icons.image, size: 48, color: Colors.grey),
+                      child: const Icon(
+                        Icons.image,
+                        size: 48,
+                        color: Colors.grey,
+                      ),
                     ),
                   ),
                 ),
@@ -45,7 +48,8 @@ class FactCard extends StatelessWidget {
               caption,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.myanmarKhyay(
+              style: TextStyle(
+                fontFamily: 'MyanmarKhyay',
                 fontSize: 16,
                 height: 1.25,
                 fontWeight: FontWeight.w600,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../theme/app_theme.dart';
 import '../widgets/did_you_know_section.dart';
 import '../widgets/home_header.dart';
@@ -44,7 +43,8 @@ class RailOneHomeScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 17),
                       child: Text(
                         'Hi, Guest!',
-                        style: GoogleFonts.myanmarKhyay(
+                        style: TextStyle(
+                          fontFamily: 'MyanmarKhyay',
                           color: AppTheme.navy,
                           fontSize: 22,
                           fontWeight: FontWeight.w600,
@@ -70,7 +70,8 @@ class RailOneHomeScreen extends StatelessWidget {
                     const SizedBox(height: 32),
                     MoreOfferingsSection(
                       onSelectOffering: (offering) {
-                        if (offering == 'PNR Status' && onNavigateToBookings != null) {
+                        if (offering == 'PNR Status' &&
+                            onNavigateToBookings != null) {
                           onNavigateToBookings!();
                         } else {
                           _showSnackBar(context, '$offering selected');

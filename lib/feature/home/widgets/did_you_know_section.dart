@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../theme/app_theme.dart';
 import 'fact_card.dart';
 
@@ -17,7 +16,8 @@ class DidYouKnowSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 17),
           child: Text(
             'Do You know?',
-            style: GoogleFonts.myanmarKhyay(
+            style: TextStyle(
+                fontFamily: 'MyanmarKhyay',
               fontSize: 27,
               color: AppTheme.navy,
               fontWeight: FontWeight.w700,

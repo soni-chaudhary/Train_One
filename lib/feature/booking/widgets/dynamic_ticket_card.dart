@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../theme/app_colors.dart';
 
@@ -101,7 +100,8 @@ class _DynamicTicketCardState extends State<DynamicTicketCard> {
 
                   Text(
                     _countdown,
-                    style: GoogleFonts.myanmarKhyay(
+                    style: const TextStyle(
+                      fontFamily: 'MyanmarKhyay',
                       color: AppColors.countdownOrange,
                       fontSize: 44,
                       height: 1,
@@ -114,7 +114,8 @@ class _DynamicTicketCardState extends State<DynamicTicketCard> {
 
                   Text(
                     'Ticket Booking Date & Time',
-                    style: GoogleFonts.myanmarKhyay(
+                    style: TextStyle(
+                      fontFamily: 'MyanmarKhyay',
                       color: Colors.white.withValues(alpha: 0.75),
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
@@ -125,7 +126,8 @@ class _DynamicTicketCardState extends State<DynamicTicketCard> {
 
                   Text(
                     '${widget.bookingDate}, ${widget.bookingTime}',
-                    style: GoogleFonts.myanmarKhyay(
+                    style: const TextStyle(
+                      fontFamily: 'MyanmarKhyay',
                       color: AppColors.ticketOrange,
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
@@ -136,7 +138,8 @@ class _DynamicTicketCardState extends State<DynamicTicketCard> {
 
                   Text(
                     widget.trainNumber,
-                    style: GoogleFonts.myanmarKhyay(
+                    style: const TextStyle(
+                      fontFamily: 'MyanmarKhyay',
                       color: Colors.white,
                       fontSize: 13,
                     ),
@@ -146,7 +149,8 @@ class _DynamicTicketCardState extends State<DynamicTicketCard> {
 
                   Text(
                     'Ticket is Non-Transferable',
-                    style: GoogleFonts.myanmarKhyay(
+                    style: TextStyle(
+                      fontFamily: 'MyanmarKhyay',
                       color: Colors.white.withValues(alpha: 0.90),
                       fontSize: 12,
                     ),
@@ -161,7 +165,6 @@ class _DynamicTicketCardState extends State<DynamicTicketCard> {
             const _RailwayTicketSideLabel(
               text: 'भारतीय रेल',
               quarterTurns: 1,
-              isHindi: true,
             ),
           ],
         ),
@@ -174,12 +177,10 @@ class _RailwayTicketSideLabel extends StatelessWidget {
   const _RailwayTicketSideLabel({
     required this.text,
     required this.quarterTurns,
-    this.isHindi = false,
   });
 
   final String text;
   final int quarterTurns;
-  final bool isHindi;
 
   @override
   Widget build(BuildContext context) {
@@ -207,11 +208,12 @@ class _RailwayTicketSideLabel extends StatelessWidget {
                   text,
                   maxLines: 1,
                   softWrap: false,
-                  style: GoogleFonts.myanmarKhyay(
+                  style: TextStyle(
+                    fontFamily: 'MyanmarKhyay',
                     color: Colors.white.withValues(alpha: 0.70),
                     fontSize: 12,
                     fontWeight: FontWeight.w700,
-                    letterSpacing: isHindi ? 0 : 1.1,
+                    letterSpacing: 1.1,
                   ),
                 ),
               ),

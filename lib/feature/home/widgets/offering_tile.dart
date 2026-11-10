@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../theme/app_theme.dart';
 
 class OfferingData {
@@ -47,7 +46,8 @@ class OfferingTile extends StatelessWidget {
               textAlign: TextAlign.center,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.myanmarKhyay(
+              style: TextStyle(
+                fontFamily: 'MyanmarKhyay',
                 color: AppTheme.mutedText,
                 fontSize: 13,
                 height: 1.2,

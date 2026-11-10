@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({
-    super.key,
-    this.onNotificationTap,
-    this.onLanguageTap,
-  });
+  const HomeHeader({super.key, this.onNotificationTap, this.onLanguageTap});
 
   final VoidCallback? onNotificationTap;
   final VoidCallback? onLanguageTap;
@@ -27,13 +22,17 @@ class HomeHeader extends StatelessWidget {
                 height: 66,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: const Color(0xFFF0F0F0), width: 1.5),
+                  border: Border.all(
+                    color: const Color(0xFFF0F0F0),
+                    width: 1.5,
+                  ),
                 ),
                 child: const Center(
                   child: Text(
                     'A\nअ',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.myanmarKhyay(
+                    style: TextStyle(
+                      fontFamily: 'MyanmarKhyay',
                       height: 0.82,
                       fontSize: 22,
                       color: Color(0xFF075BEA),
@@ -57,9 +56,16 @@ class HomeHeader extends StatelessWidget {
                     height: 66,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: const Color(0xFFF0F0F0), width: 1.5),
+                      border: Border.all(
+                        color: const Color(0xFFF0F0F0),
+                        width: 1.5,
+                      ),
                     ),
-                    child: const Icon(Icons.notifications_none, size: 33, color: Colors.black87),
+                    child: const Icon(
+                      Icons.notifications_none,
+                      size: 33,
+                      color: Colors.black87,
+                    ),
                   ),
                   Positioned(
                     right: 4,
@@ -74,7 +80,11 @@ class HomeHeader extends StatelessWidget {
                       child: const Center(
                         child: Text(
                           '3',
-                          style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
@@ -96,7 +106,8 @@ class _RailOneLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text.rich(
       TextSpan(
-        style: GoogleFonts.myanmarKhyay(
+        style: TextStyle(
+          fontFamily: 'MyanmarKhyay',
           fontSize: 42,
           color: Colors.black,
           fontWeight: FontWeight.w300,
@@ -104,8 +115,14 @@ class _RailOneLogo extends StatelessWidget {
         ),
         children: const [
           TextSpan(text: 'Rail'),
-          TextSpan(text: 'O', style: TextStyle(fontWeight: FontWeight.w800)),
-          TextSpan(text: 'ne', style: TextStyle(fontWeight: FontWeight.w700)),
+          TextSpan(
+            text: 'O',
+            style: TextStyle(fontWeight: FontWeight.w800),
+          ),
+          TextSpan(
+            text: 'ne',
+            style: TextStyle(fontWeight: FontWeight.w700),
+          ),
         ],
       ),
     );

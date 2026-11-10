@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BookingAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BookingAppBar({
@@ -33,9 +32,10 @@ class BookingAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Booking Details',
-            style: GoogleFonts.myanmarKhyay(
+            style: TextStyle(
+              fontFamily: 'MyanmarKhyay',
               fontSize: 20,
               fontWeight: FontWeight.w700,
               color: Colors.white,
@@ -44,7 +44,8 @@ class BookingAppBar extends StatelessWidget implements PreferredSizeWidget {
           const SizedBox(height: 2),
           Text(
             'Mobile: $mobileNumber',
-            style: GoogleFonts.myanmarKhyay(
+            style: const TextStyle(
+              fontFamily: 'MyanmarKhyay',
               fontSize: 12,
               fontWeight: FontWeight.w400,
               color: Colors.white70,

@@ -5,6 +5,7 @@ import '../widgets/booking_app_bar.dart';
 import '../widgets/dynamic_ticket_card.dart';
 import '../widgets/thank_you_banner.dart';
 import '../widgets/ticket_notice.dart';
+import '../widgets/ticket_qr_card.dart';
 import '../widgets/ticket_summary_card.dart';
 
 class BookingDetailsScreen extends StatelessWidget {
@@ -28,7 +29,7 @@ class BookingDetailsScreen extends StatelessWidget {
           child: Column(
             children: [
               const ThankYouBanner(
-                passengerName: 'Abhishek Sharma,',
+                passengerName: 'Abhishek Sharma',
               ),
               const SizedBox(height: 10),
               const DynamicTicketCard(
@@ -49,6 +50,7 @@ class BookingDetailsScreen extends StatelessWidget {
                 route: 'MTC',
                 irReference: '07AAAGM0289C1ZL',
               ),
+              const TicketQrCard(ticketNumber: 'XC4IEG9127'),
               const TicketNotice(),
               BookingActionButtons(
                 onConnectingJourney: () {

@@ -63,6 +63,7 @@ flutter:
   assets:
     - assets/logo.jpeg
     - assets/splash.jpeg
+    - assets/railone.png
     - assets/images/
     - assets/fonts/
 

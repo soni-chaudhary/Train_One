@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../booking/screens/booking_details_screen.dart';
 import '../../home/screens/rail_one_home_screen.dart';
 import '../widgets/railone_bottom_navigation.dart';
+import '../widgets/railone_menu_drawer.dart';
 import '../../../theme/app_theme.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -14,15 +15,20 @@ class LandingScreen extends StatefulWidget {
 }
 
 class _LandingScreenState extends State<LandingScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   late int _currentIndex;
 
   @override
   void initState() {
     super.initState();
-    _currentIndex = widget.initialIndex;
+    _currentIndex = widget.initialIndex.clamp(0, 2);
   }
 
   void _onTabSelected(int index) {
+    if (index == 3) {
+      _scaffoldKey.currentState?.openEndDrawer();
+      return;
+    }
     if (_currentIndex != index) {
       setState(() {
         _currentIndex = index;
@@ -33,13 +39,20 @@ class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      endDrawer: RailOneMenuDrawer(
+        onSelectItem: (item) {
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(SnackBar(content: Text(item)));
+        },
+      ),
       body: IndexedStack(
         index: _currentIndex,
         children: [
           RailOneHomeScreen(onNavigateToBookings: () => _onTabSelected(1)),
           BookingDetailsScreen(onBack: () => _onTabSelected(0)),
           const _ProfilePlaceholderTab(),
-          const _MenuPlaceholderTab(),
         ],
       ),
       bottomNavigationBar: RailOneBottomNavigation(
@@ -134,57 +147,6 @@ class _ProfilePlaceholderTab extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class _MenuPlaceholderTab extends StatelessWidget {
-  const _MenuPlaceholderTab();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(title: const Text('Menu & Services'), centerTitle: true),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 12),
-        children: [
-          _buildMenuItem(Icons.train_outlined, 'Indian Railways Services'),
-          _buildMenuItem(Icons.support_agent_outlined, 'Rail Madad Helpdesk'),
-          _buildMenuItem(Icons.fastfood_outlined, 'IRCTC e-Catering'),
-          _buildMenuItem(Icons.hotel_outlined, 'Retiring Rooms & Lounge'),
-          _buildMenuItem(Icons.notifications_none, 'Notification Settings'),
-          _buildMenuItem(Icons.security_outlined, 'Privacy & Terms'),
-          _buildMenuItem(Icons.info_outline, 'About RailOne'),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildMenuItem(IconData icon, String title) {
-    return ListTile(
-      leading: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          color: const Color(0xFFF2F5F9),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Icon(icon, color: const Color(0xFF0866F5), size: 22),
-      ),
-      title: Text(
-        title,
-        style: TextStyle(
-          fontFamily: 'MyanmarKhyay',
-          fontWeight: FontWeight.w500,
-          fontSize: 15,
-        ),
-      ),
-      trailing: const Icon(
-        Icons.arrow_forward_ios_rounded,
-        size: 16,
-        color: Colors.grey,
-      ),
-      onTap: () {},
     );
   }
 }

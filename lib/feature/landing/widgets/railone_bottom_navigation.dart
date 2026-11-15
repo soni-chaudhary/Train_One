@@ -12,8 +12,7 @@ class RailOneBottomNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 78,
+    return DecoratedBox(
       decoration: const BoxDecoration(
         color: Color(0xFF0866F5),
         boxShadow: [
@@ -26,36 +25,42 @@ class RailOneBottomNavigation extends StatelessWidget {
       ),
       child: SafeArea(
         top: false,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _BottomNavItem(
-              icon: currentIndex == 0 ? Icons.home : Icons.home_outlined,
-              label: 'Home',
-              selected: currentIndex == 0,
-              onTap: () => onTap(0),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 58),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _BottomNavItem(
+                  icon: currentIndex == 0 ? Icons.home : Icons.home_outlined,
+                  label: 'Home',
+                  selected: currentIndex == 0,
+                  onTap: () => onTap(0),
+                ),
+                _BottomNavItem(
+                  icon: currentIndex == 1
+                      ? Icons.confirmation_num
+                      : Icons.confirmation_number_outlined,
+                  label: 'My Bookings',
+                  selected: currentIndex == 1,
+                  onTap: () => onTap(1),
+                ),
+                _BottomNavItem(
+                  icon: currentIndex == 2 ? Icons.person : Icons.person_outline,
+                  label: 'You',
+                  selected: currentIndex == 2,
+                  onTap: () => onTap(2),
+                ),
+                _BottomNavItem(
+                  icon: Icons.menu,
+                  label: 'Menu',
+                  selected: currentIndex == 3,
+                  onTap: () => onTap(3),
+                ),
+              ],
             ),
-            _BottomNavItem(
-              icon: currentIndex == 1
-                  ? Icons.confirmation_num
-                  : Icons.confirmation_number_outlined,
-              label: 'My Bookings',
-              selected: currentIndex == 1,
-              onTap: () => onTap(1),
-            ),
-            _BottomNavItem(
-              icon: currentIndex == 2 ? Icons.person : Icons.person_outline,
-              label: 'You',
-              selected: currentIndex == 2,
-              onTap: () => onTap(2),
-            ),
-            _BottomNavItem(
-              icon: Icons.menu,
-              label: 'Menu',
-              selected: currentIndex == 3,
-              onTap: () => onTap(3),
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -84,10 +89,11 @@ class _BottomNavItem extends StatelessWidget {
         splashColor: Colors.white24,
         highlightColor: Colors.transparent,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 28, color: color),
-            const SizedBox(height: 4),
+            Icon(icon, size: 24, color: color),
+            const SizedBox(height: 3),
             Text(
               label,
               maxLines: 1,
@@ -95,7 +101,7 @@ class _BottomNavItem extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'MyanmarKhyay',
                 color: color,
-                fontSize: 12,
+                fontSize: 11,
 
                 fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
               ),

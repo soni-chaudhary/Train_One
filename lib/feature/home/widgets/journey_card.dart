@@ -17,12 +17,14 @@ class JourneyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(25),
+      borderRadius: BorderRadius.circular(14),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Expanded(
+          AspectRatio(
+            aspectRatio: 1.35,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(14),
               child: SizedBox(
                 width: double.infinity,
                 child: Image.asset(
@@ -32,7 +34,7 @@ class JourneyCard extends StatelessWidget {
                     color: Colors.grey.shade200,
                     child: const Icon(
                       Icons.train,
-                      size: 48,
+                      size: 32,
                       color: Colors.grey,
                     ),
                   ),
@@ -40,16 +42,16 @@ class JourneyCard extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 6),
           Text(
             title,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
               fontFamily: 'MyanmarKhyay',
-              fontSize: 23,
+              fontSize: 13,
               color: AppTheme.mutedText,
-              height: 1.05,
+              height: 1.1,
               fontWeight: FontWeight.w500,
             ),
           ),

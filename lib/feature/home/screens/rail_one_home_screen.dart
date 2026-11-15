@@ -4,6 +4,7 @@ import '../widgets/did_you_know_section.dart';
 import '../widgets/home_header.dart';
 import '../widgets/journey_planner_section.dart';
 import '../widgets/more_offerings_section.dart';
+import '../widgets/social_media_section.dart';
 
 class RailOneHomeScreen extends StatelessWidget {
   const RailOneHomeScreen({
@@ -38,20 +39,20 @@ class RailOneHomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 24),
+                    const SizedBox(height: 12),
                     const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 17),
+                      padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Text(
                         'Hi, Guest!',
                         style: TextStyle(
                           fontFamily: 'MyanmarKhyay',
                           color: AppTheme.navy,
-                          fontSize: 22,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 14),
                     JourneyPlannerSection(
                       onReservedTap: () {
                         if (onNavigateToBookings != null) {
@@ -67,7 +68,7 @@ class RailOneHomeScreen extends StatelessWidget {
                         _showSnackBar(context, 'Platform Ticket Booking');
                       },
                     ),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 22),
                     MoreOfferingsSection(
                       onSelectOffering: (offering) {
                         if (offering == 'PNR Status' &&
@@ -78,10 +79,16 @@ class RailOneHomeScreen extends StatelessWidget {
                         }
                       },
                     ),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 22),
                     DidYouKnowSection(
                       onSelectFact: (fact) {
                         _showSnackBar(context, 'Fact: $fact');
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    SocialMediaSection(
+                      onSelectPlatform: (platform) {
+                        _showSnackBar(context, 'Opening RailOne on $platform');
                       },
                     ),
                   ],

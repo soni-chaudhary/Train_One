@@ -26,32 +26,37 @@ class OfferingTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: data.onTap ?? () {},
-      borderRadius: BorderRadius.circular(17),
+      borderRadius: BorderRadius.circular(14),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           AspectRatio(
             aspectRatio: 1,
             child: Container(
+              alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: data.background,
-                borderRadius: BorderRadius.circular(17),
+                borderRadius: BorderRadius.circular(14),
               ),
-              child: Icon(data.icon, size: 48, color: data.iconColor),
+              child: Icon(data.icon, size: 32, color: data.iconColor),
             ),
           ),
-          const SizedBox(height: 9),
+          const SizedBox(height: 6),
           Expanded(
-            child: Text(
-              data.label,
-              textAlign: TextAlign.center,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontFamily: 'MyanmarKhyay',
-                color: AppTheme.mutedText,
-                fontSize: 13,
-                height: 1.2,
-                fontWeight: FontWeight.w500,
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Text(
+                data.label,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontFamily: 'MyanmarKhyay',
+                  color: AppTheme.mutedText,
+                  fontSize: 11.5,
+                  height: 1.15,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),

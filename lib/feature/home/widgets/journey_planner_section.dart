@@ -20,49 +20,46 @@ class JourneyPlannerSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 17),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             'Journey Planner',
             style: TextStyle(
               fontFamily: 'MyanmarKhyay',
-              fontSize: 27,
+              fontSize: 17,
               color: AppTheme.navy,
               fontWeight: FontWeight.w700,
             ),
           ),
         ),
-        const SizedBox(height: 19),
-        SizedBox(
-          height: 214,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 17),
-            child: Row(
-              children: [
-                Expanded(
-                  child: JourneyCard(
-                    title: 'Reserved',
-                    assetPath: 'assets/images/journey_reserved.jpg',
-                    onTap: onReservedTap,
-                  ),
+        const SizedBox(height: 12),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            children: [
+              Expanded(
+                child: JourneyCard(
+                  title: 'Reserved',
+                  assetPath: 'assets/images/journey_reserved.jpg',
+                  onTap: onReservedTap,
                 ),
-                const SizedBox(width: 15),
-                Expanded(
-                  child: JourneyCard(
-                    title: 'Unreserved',
-                    assetPath: 'assets/images/journey_unreserved.jpg',
-                    onTap: onUnreservedTap,
-                  ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: JourneyCard(
+                  title: 'Unreserved',
+                  assetPath: 'assets/images/journey_unreserved.jpg',
+                  onTap: onUnreservedTap,
                 ),
-                const SizedBox(width: 15),
-                Expanded(
-                  child: JourneyCard(
-                    title: 'Platform',
-                    assetPath: 'assets/images/journey_platform.jpg',
-                    onTap: onPlatformTap,
-                  ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: JourneyCard(
+                  title: 'Platform',
+                  assetPath: 'assets/images/journey_platform.jpg',
+                  onTap: onPlatformTap,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ],

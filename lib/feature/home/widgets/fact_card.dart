@@ -17,15 +17,15 @@ class FactCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(18),
+      borderRadius: BorderRadius.circular(14),
       child: SizedBox(
-        width: 288,
+        width: 240,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(18),
+                borderRadius: BorderRadius.circular(14),
                 child: SizedBox(
                   width: double.infinity,
                   child: Image.asset(
@@ -35,7 +35,7 @@ class FactCard extends StatelessWidget {
                       color: Colors.grey.shade200,
                       child: const Icon(
                         Icons.image,
-                        size: 48,
+                        size: 36,
                         color: Colors.grey,
                       ),
                     ),
@@ -43,16 +43,16 @@ class FactCard extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 6),
             Text(
               caption,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontFamily: 'MyanmarKhyay',
-                fontSize: 16,
+                fontSize: 13,
                 height: 1.25,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
                 color: AppTheme.navy,
               ),
             ),

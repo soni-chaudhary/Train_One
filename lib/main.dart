@@ -20,4 +20,3 @@ class RailOneApp extends StatelessWidget {
     );
   }
 }
-

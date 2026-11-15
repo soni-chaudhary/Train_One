@@ -13,36 +13,36 @@ class DidYouKnowSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 17),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             'Do You know?',
             style: TextStyle(
-                fontFamily: 'MyanmarKhyay',
-              fontSize: 27,
+              fontFamily: 'MyanmarKhyay',
+              fontSize: 17,
               color: AppTheme.navy,
               fontWeight: FontWeight.w700,
             ),
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 12),
         SizedBox(
-          height: 300,
+          height: 210,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 18),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             children: [
               FactCard(
                 assetPath: 'assets/images/fact_train.jpg',
                 caption: 'First ever passenger train in India ran between Mumbai and Thane in 1853.',
                 onTap: () => onSelectFact?.call('First passenger train'),
               ),
-              const SizedBox(width: 20),
+              const SizedBox(width: 14),
               FactCard(
                 assetPath: 'assets/images/fact_bridge.jpg',
                 caption: 'Chenab Railway Bridge: World\'s highest railway bridge at 359m above river bed.',
                 onTap: () => onSelectFact?.call('Chenab Railway Bridge'),
               ),
-              const SizedBox(width: 20),
+              const SizedBox(width: 14),
               FactCard(
                 assetPath: 'assets/images/fact_green.jpg',
                 caption: 'Indian Railways is working to become Net Zero Carbon Emitter by 2030.',

@@ -22,7 +22,7 @@ class BookingAppBar extends StatelessWidget implements PreferredSizeWidget {
         padding: const EdgeInsets.only(left: 12),
         child: IconButton(
           onPressed: onBack ?? () => Navigator.of(context).maybePop(),
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 19),
+          icon: const Icon(Icons.arrow_back_rounded, size: 20),
           style: IconButton.styleFrom(
             side: const BorderSide(color: Colors.white54),
             shape: const CircleBorder(),

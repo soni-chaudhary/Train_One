@@ -85,7 +85,7 @@ class RailOneHomeScreen extends StatelessWidget {
                         _showSnackBar(context, 'Fact: $fact');
                       },
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 50),
                     SocialMediaSection(
                       onSelectPlatform: (platform) {
                         _showSnackBar(context, 'Opening RailOne on $platform');

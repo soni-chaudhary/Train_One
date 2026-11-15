@@ -123,12 +123,13 @@ class _ProfilePlaceholderTab extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'R-Wallet Balance',
                         style: TextStyle(
                           fontFamily: 'MyanmarKhyay',
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
+                          color: AppTheme.mutedText,
                         ),
                       ),
                       Text(

@@ -60,7 +60,7 @@ class TicketQrCard extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'MyanmarKhyay',
-              color: Color(0xFF9A9A9A),
+              color: AppColors.subtitleText,
               fontSize: 10.5,
             ),
           ),

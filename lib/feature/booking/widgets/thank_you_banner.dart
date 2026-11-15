@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../theme/app_colors.dart';
+
 class ThankYouBanner extends StatelessWidget {
   const ThankYouBanner({
     super.key,
@@ -16,9 +18,9 @@ class ThankYouBanner extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 11),
       child: Text(
         'Thank You $passengerName, Happy Journey !',
-        style: TextStyle(
+        style: const TextStyle(
           fontFamily: 'MyanmarKhyay',
-          color: Colors.grey.shade500,
+          color: AppColors.subtitleText,
           fontSize: 12,
           fontWeight: FontWeight.w400,
         ),

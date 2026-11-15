@@ -4,10 +4,13 @@ abstract final class AppColors {
   static const primary = Color(0xFF1976E8);
   static const primaryDark = Color(0xFF0D63D7);
 
+  static const headerText = Color(0xFF000745);
+  static const subtitleText = Color(0xFF3E4361);
+
   static const background = Color(0xFFF5F6F8);
   static const surface = Colors.white;
-  static const textPrimary = Color(0xFF222222);
-  static const textSecondary = Color(0xFF777777);
+  static const textPrimary = headerText;
+  static const textSecondary = subtitleText;
   static const divider = Color(0xFFE8E8E8);
 
   static const ticketDark = Color(0xFF202124);
@@ -18,6 +21,6 @@ abstract final class AppColors {
   static const warningText = Color(0xFFE57373);
   static const disabledBorder = Color(0xFFD8DDE5);
 
-  static const navy = Color(0xFF0F265C);
-  static const mutedText = Color(0xFF6B7280);
+  static const navy = headerText;
+  static const mutedText = subtitleText;
 }

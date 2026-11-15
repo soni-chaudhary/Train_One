@@ -96,7 +96,7 @@ class TicketSummaryCard extends StatelessWidget {
               'IR:$irReference',
               style: const TextStyle(
                 fontFamily: 'MyanmarKhyay',
-                color: Color(0xFF999999),
+                color: AppColors.subtitleText,
                 fontSize: 12,
                 letterSpacing: 0.4,
               ),
@@ -109,7 +109,7 @@ class TicketSummaryCard extends StatelessWidget {
               'Valid for start of journey within 3 hour or until departure of the first train.',
               style: TextStyle(
                 fontFamily: 'MyanmarKhyay',
-                color: Color(0xFF9A9A9A),
+                color: AppColors.subtitleText,
                 fontSize: 10,
                 height: 1.35,
               ),
@@ -138,7 +138,7 @@ class _TopRow extends StatelessWidget {
               'Journey Ticket',
               style: TextStyle(
                 fontFamily: 'MyanmarKhyay',
-                color: Color(0xFF8D8D8D),
+                color: AppColors.subtitleText,
                 fontSize: 11,
               ),
             ),
@@ -242,7 +242,7 @@ class _InfoColumn extends StatelessWidget {
           label,
           style: const TextStyle(
             fontFamily: 'MyanmarKhyay',
-            color: Color(0xFF8B8B8B),
+            color: AppColors.subtitleText,
             fontSize: 11,
             fontWeight: FontWeight.w400,
           ),

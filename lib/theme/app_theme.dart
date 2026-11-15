@@ -42,21 +42,23 @@ abstract final class AppTheme {
           fontFamily: 'MyanmarKhyay',
           fontSize: 16,
           fontWeight: FontWeight.w600,
+          color: AppColors.headerText,
         ),
         titleSmall: TextStyle(
           fontFamily: 'MyanmarKhyay',
           fontSize: 14,
           fontWeight: FontWeight.w600,
+          color: AppColors.headerText,
         ),
         bodyLarge: TextStyle(
           fontFamily: 'MyanmarKhyay',
           fontSize: 15,
-          color: AppColors.textPrimary,
+          color: AppColors.headerText,
         ),
         bodyMedium: TextStyle(
           fontFamily: 'MyanmarKhyay',
           fontSize: 13,
-          color: AppColors.textSecondary,
+          color: AppColors.subtitleText,
         ),
         labelLarge: TextStyle(
           fontFamily: 'MyanmarKhyay',

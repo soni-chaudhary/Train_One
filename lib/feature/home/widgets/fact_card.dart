@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import '../../../theme/app_theme.dart';
+import '../../../theme/app_colors.dart';
 
 class FactCard extends StatelessWidget {
   final String assetPath;
   final String caption;
+  final double width;
+  final double imageHeight;
   final VoidCallback? onTap;
 
   const FactCard({
     super.key,
     required this.assetPath,
     required this.caption,
+    required this.width,
+    this.imageHeight = 116,
     this.onTap,
   });
 
@@ -19,41 +23,44 @@ class FactCard extends StatelessWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(14),
       child: SizedBox(
-        width: 240,
+        width: width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(14),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: Image.asset(
-                    assetPath,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => Container(
-                      color: Colors.grey.shade200,
-                      child: const Icon(
-                        Icons.image,
-                        size: 36,
-                        color: Colors.grey,
-                      ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(14),
+              child: SizedBox(
+                width: width,
+                height: imageHeight,
+                child: Image.asset(
+                  assetPath,
+                  width: width,
+                  height: imageHeight,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) => Container(
+                    width: width,
+                    height: imageHeight,
+                    color: Colors.grey.shade200,
+                    child: const Icon(
+                      Icons.image,
+                      size: 36,
+                      color: Colors.grey,
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 8),
             Text(
               caption,
-              maxLines: 2,
+              maxLines: 4,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: 'MyanmarKhyay',
-                fontSize: 13,
-                height: 1.25,
+                fontSize: 12.5,
+                height: 1.3,
                 fontWeight: FontWeight.w500,
-                color: AppTheme.navy,
+                color: AppColors.subtitleText,
               ),
             ),
           ],

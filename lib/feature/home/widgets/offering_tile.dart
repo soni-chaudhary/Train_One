@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../theme/app_theme.dart';
 
 class OfferingData {
   final String label;
-  final IconData icon;
+  final String svgAsset;
   final Color background;
   final Color iconColor;
   final VoidCallback? onTap;
 
   const OfferingData(
     this.label,
-    this.icon,
+    this.svgAsset,
     this.background,
     this.iconColor, {
     this.onTap,
@@ -38,7 +39,12 @@ class OfferingTile extends StatelessWidget {
                 color: data.background,
                 borderRadius: BorderRadius.circular(14),
               ),
-              child: Icon(data.icon, size: 32, color: data.iconColor),
+              child: SvgPicture.asset(
+                data.svgAsset,
+                width: 40,
+                height: 40,
+                colorFilter: ColorFilter.mode(data.iconColor, BlendMode.srcIn),
+              ),
             ),
           ),
           const SizedBox(height: 6),
